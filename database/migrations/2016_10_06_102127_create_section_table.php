@@ -22,7 +22,7 @@ class CreateSectionTable extends Migration
             $table->string('bot3_4')->default('false'); // สามตัวล่าง 4
             $table->string('bot2')->default('false'); // สองตัวล่าง
             $table->date('date'); // วันที่ ของ งวด
-            $table->string('time_close'); // เวลาปิดรับ
+            $table->timestamp('time_close'); // เวลาปิดรับ
             $table->integer('success_id'); // id ของผู้ออกรางวัล
             $table->timestamps();
         });

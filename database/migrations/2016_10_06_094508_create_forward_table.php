@@ -22,8 +22,8 @@ class CreateForwardTable extends Migration
             $table->integer('middleman_id'); // id ผู้ส่ง
             $table->integer('agent_id'); // id ผู้รับ
             $table->decimal('price', 16, 6); // ราคาส่ง ของ ผู้ส่ง
-            $table->decimal('discount_percent', 5, 6); // เปอเซ็นส่วนลด ของ ผู้ส่ง
-            $table->decimal('reward_percent', 5, 6); // เปอเซ็นรางวัล ของ ผู้ส่ง
+            $table->decimal('discount_percent', 9, 6); // เปอเซ็นส่วนลด ของ ผู้ส่ง
+            $table->decimal('reward_percent', 9, 6); // เปอเซ็นรางวัล ของ ผู้ส่ง
             $table->decimal('discount', 16, 6); // ส่วนลดที่ได้ ของ ผู้ส่ง
             $table->decimal('reward', 16, 6)->default('0.00'); // รางวัลที่ได้ ของ ผู้ส่ง
             $table->decimal('sum', 16, 6); // ยอดสุทธิของ ผู้ส่ง

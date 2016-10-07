@@ -20,7 +20,7 @@ class CreateBillTable extends Migration
             $table->decimal('sum_price', 16, 6); // ยอดซื้อทั้งหมด ของ บิล
             $table->decimal('sum_discount', 16, 6); // ยอดส่วนลดทั้งหมด ของ บิล
             $table->decimal('sum_reward', 16, 6)->default('0.00'); // ยอดรางวัลทั้งหมด ของ บิล
-            $table->decimal('sum_', 16, 6); // สุทธิ ของ บิล
+            $table->decimal('sum', 16, 6); // สุทธิ ของ บิล
             $table->string('note'); // หมายเหตุ ของ บิล
             $table->string('status')->default('buy'); // สถานะการส่ง
             $table->timestamps();

@@ -19,8 +19,14 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
+            $table->decimal('credit', 16, 6); // เครดิตของ account
+            $table->decimal('balance', 16, 6); // ยอดได้เสียของ account
+            $table->integer('agent_id')->nullable(); // id ของเอเย่น account
+            $table->text('user_map'); // id,id,id,id,id,id เรียงจาก เอเย่นต์บนสุดมาหา account
             $table->timestamps();
         });
+
+        $this->init_default();
     }
 
     /**
@@ -31,5 +37,20 @@ class CreateUsersTable extends Migration
     public function down()
     {
         Schema::drop('users');
+    }
+
+
+    /* init Admin account */
+    private function init_default(){
+        DB::table('users')->insert(
+            array(
+                'name' => 'Admin_lotto',
+                'email' => 'admin',
+                'password' => md5('Password'),
+                'credit' => '1000000000',
+                'balance' => '0',
+                'user_map' => '1'
+            )
+        );
     }
 }
