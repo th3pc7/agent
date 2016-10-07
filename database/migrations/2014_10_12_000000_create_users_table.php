@@ -19,7 +19,8 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
-            $table->decimal('percent', 9, 6); // เครดิตของ account
+            $table->string('class'); // class ของ account
+            $table->decimal('percent', 9, 6); // เปอร์เซ็นของ account
             $table->decimal('credit', 16, 6); // เครดิตของ account
             $table->decimal('balance', 16, 6); // ยอดได้เสียของ account
             $table->integer('agent_id')->nullable(); // id ของเอเย่น account
